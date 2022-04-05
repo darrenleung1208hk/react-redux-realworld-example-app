@@ -15,7 +15,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="article">
+            <NavLink className="nav-link" to="editor">
               <i className="ion-compose"></i>&nbsp;New Article
             </NavLink>
           </li>
