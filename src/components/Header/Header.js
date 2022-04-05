@@ -1,38 +1,38 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <nav className="navbar navbar-light">
       <div className="container">
-        <a className="navbar-brand" href="index.html">
+        <NavLink className="navbar-brand" to="/">
           conduit
-        </a>
+        </NavLink>
         <ul className="nav navbar-nav pull-xs-right">
           <li className="nav-item">
-            {/* <!-- Add "active" class when you're on that page" --> */}
-            <a className="nav-link active" href="">
+            <NavLink className="nav-link" to="/">
               Home
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="">
+            <NavLink className="nav-link" to="article">
               <i className="ion-compose"></i>&nbsp;New Article
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="">
+            <NavLink className="nav-link" to="settings">
               <i className="ion-gear-a"></i>&nbsp;Settings
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="">
+            <NavLink className="nav-link" to="login">
               Sign in
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="">
+            <NavLink className="nav-link" to="register">
               Sign up
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>
