@@ -1,6 +1,36 @@
 import React from "react";
 
+const popularTags = [
+  "programning",
+  "javascript",
+  "emberjs",
+  "angularjs",
+  "react",
+  "mean",
+  "node",
+  "rails",
+];
+
 const HomePage = () => {
+  const renderPopularTags = () => {
+    return (
+      <div className="sidebar">
+        <p>Popular Tags</p>
+        <div className="tag-list">
+          {popularTags.map((tag, index) => (
+            <a
+              key={`popular-tag-${index}`}
+              href=""
+              className="tag-pill tag-default"
+            >
+              {tag}
+            </a>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="home-page">
       <div className="banner">
@@ -76,38 +106,7 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="col-md-3">
-            <div className="sidebar">
-              <p>Popular Tags</p>
-
-              <div className="tag-list">
-                <a href="" className="tag-pill tag-default">
-                  programming
-                </a>
-                <a href="" className="tag-pill tag-default">
-                  javascript
-                </a>
-                <a href="" className="tag-pill tag-default">
-                  emberjs
-                </a>
-                <a href="" className="tag-pill tag-default">
-                  angularjs
-                </a>
-                <a href="" className="tag-pill tag-default">
-                  react
-                </a>
-                <a href="" className="tag-pill tag-default">
-                  mean
-                </a>
-                <a href="" className="tag-pill tag-default">
-                  node
-                </a>
-                <a href="" className="tag-pill tag-default">
-                  rails
-                </a>
-              </div>
-            </div>
-          </div>
+          <div className="col-md-3">{renderPopularTags()}</div>
         </div>
       </div>
     </div>
