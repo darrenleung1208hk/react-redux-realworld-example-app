@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useQuery } from "react-query";
 import { listArticles } from "../../api";
+import { setArticles } from "../../reducers/articleList";
 
 const popularTags = [
   "programning",
@@ -14,7 +16,18 @@ const popularTags = [
 ];
 
 const HomePage = () => {
-  const { data: { articles } = {} } = useQuery("listArticles", listArticles);
+  const dispatch = useDispatch();
+  const articles = useSelector((state) => state.articleList.articles);
+  const { data: { articles: articlesData, articlesCount } = {} } = useQuery(
+    "listArticles",
+    listArticles
+  );
+
+  useEffect(() => {
+    if (articlesData) {
+      dispatch(setArticles(articlesData));
+    }
+  }, [dispatch, setArticles, articlesData]);
 
   const renderPopularTags = () => {
     return (
