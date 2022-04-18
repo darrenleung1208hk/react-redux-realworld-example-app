@@ -10,7 +10,7 @@ export const articleListSlice = createSlice({
     addArticle: (state, action) => {
       state.articles = [...state.articles, action.payload];
     },
-    deleteArticle: (state, action) => {
+    removeArticle: (state, action) => {
       const updatedArticles = state.articles.filter(
         (article) => article.slug !== action.payload
       );
@@ -18,3 +18,8 @@ export const articleListSlice = createSlice({
     },
   },
 });
+
+export const { setArticles, addArticles, removeArticle } =
+  articleListSlice.actions;
+
+export default articleListSlice.reducer;

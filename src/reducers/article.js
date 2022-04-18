@@ -10,8 +10,13 @@ export const articleSlice = createSlice({
     updateArticle: (state, action) => {
       state.article = { ...state.article, ...action.payload };
     },
-    deleteArticle: (state) => {
+    removeArticle: (state) => {
       state.article = {};
     },
   },
 });
+
+export const { setArticle, updateArticle, removeArticle } =
+  articleSlice.actions;
+
+export default articleSlice.reducer;
