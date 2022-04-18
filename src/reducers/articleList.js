@@ -5,7 +5,7 @@ export const articleListSlice = createSlice({
   initialState: { articles: [] },
   reducers: {
     setArticles: (state, action) => {
-      state.articles = [...action.payload];
+      state.articles = action.payload;
     },
     addArticle: (state, action) => {
       state.articles = [...state.articles, action.payload];
