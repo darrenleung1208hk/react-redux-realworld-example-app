@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 import { listArticles } from "../../api";
 import { setArticles } from "../../reducers/articleList";
 
@@ -66,11 +67,11 @@ const HomePage = () => {
               <i className="ion-heart"></i> {article.favoritesCount}
             </button>
           </div>
-          <a href="" className="preview-link">
+          <Link to={`/article/${article.slug}`} className="preview-link">
             <h1>{article.title}</h1>
             <p>{article.description}</p>
             <span>Read more...</span>
-          </a>
+          </Link>
         </div>
       );
     });

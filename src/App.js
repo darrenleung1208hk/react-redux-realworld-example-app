@@ -13,6 +13,7 @@ const App = () => {
         <Route path="register" element={<pages.AuthPage />} />
         <Route path="settings" element={<pages.SettingsPage />} />
         <Route path="editor" element={<pages.EditorPage />} />
+        <Route path="article/:slug" element={<pages.ArticlePage />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
       <Footer />
